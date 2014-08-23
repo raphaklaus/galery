@@ -1,11 +1,13 @@
 .rightArrow{
 	position: absolute;
+	margin-left: 10px;
 	margin-top: 150px;
 	content: url(asset-path('seta_direita.jpg'));
 }
 
 .leftArrow{
 	float: left;
+	margin-right: 10px;
 	margin-top: 150px;
 	content: url(asset-path('seta_esquerda.jpg'));
 }
