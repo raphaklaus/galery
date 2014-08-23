@@ -10,5 +10,5 @@
   <%= image_tag(@foto.retrato.url(:medium)) %>
 </p>
 
-<%= link_to 'Edit', edit_foto_path(@foto) %> |
-<%= link_to 'Back', fotos_path %>
+<%= link_to 'Editar', edit_foto_path(@foto), class: 'btn btn-primary' %> 
+<%= link_to 'Voltar', fotos_path, class: 'btn btn-default' %>

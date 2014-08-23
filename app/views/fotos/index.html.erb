@@ -1,11 +1,17 @@
-<h1>Listing fotos</h1>
+<h1>Lista de Fotos</h1>
+<hr/>
 
-<table>
+<%= link_to new_foto_path, :class => 'btn btn-default' do %>
+  <i class='fa fa-pencil'></i>
+  Nova Foto
+<% end %>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Imagem</th>
       <th>Nome</th>
-      <th colspan="3">Ações</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -14,14 +20,22 @@
       <tr>
         <td><%= image_tag(foto.retrato.url(:thumb)) %></td>
         <td><%= foto.nome %></td>
-        <td><%= link_to 'Show', foto %></td>
-        <td><%= link_to 'Edit', edit_foto_path(foto) %></td>
-        <td><%= link_to 'Destroy', foto, method: :delete, data: { confirm: 'Tem certeza que deseja deletar a foto?' } %></td>
+        <td><%= link_to (foto), class: 'btn btn-default' do %>
+          <i class='fa fa-eye'></i>
+          Visualizar
+        <% end %>
+        <%= link_to edit_foto_path(foto), class: 'btn btn-default' do %>
+          <i class='fa fa-edit'></i>
+          Editar
+        <% end %>
+        <%= link_to foto, method: :delete, data: { confirm: 'Tem certeza que deseja deletar a foto?' }, class: 'btn btn-default' do %>
+          <i class='fa fa-trash-o'></i>
+          Excluir          
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Foto', new_foto_path %>
