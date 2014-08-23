@@ -10869,3 +10869,447 @@ Processing by FotosController#index as JSON
   [1m[36mFoto Load (0.2ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
   Rendered fotos/index.json.jbuilder (5.5ms)
 Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/slider" for 127.0.0.1 at 2014-08-23 11:56:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SliderController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:4)
+  [1m[35m (35.0ms)[0m  SELECT COUNT(*) FROM `fotos`
+  Rendered slider/index.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 271ms (Views: 175.0ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:11 -0700
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2014-08-23 11:56:12 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:12 -0700
+Processing by FotosController#index as JSON
+  [1m[36mFoto Load (0.3ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.json.jbuilder (42.0ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 11:56:30 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (133.2ms)
+  Rendered fotos/new.html.erb within layouts/application (171.8ms)
+Completed 200 OK in 233ms (Views: 226.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 11:56:32 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (9.9ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 126ms (Views: 114.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/slider" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+Processing by SliderController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `fotos`[0m
+  Rendered slider/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:35 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (1.1ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (12.2ms)
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/fotos/3" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+Processing by FotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CD3u+dn+25D7zmVWAZx/KTTDzZFeYmD3LLkUc4iD4RU=", "id"=>"3"}
+  [1m[36mFoto Load (2.9ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (56.3ms)[0m  [1mDELETE FROM `fotos` WHERE `fotos`.`id` = 3[0m
+  [1m[35m (16.7ms)[0m  COMMIT
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/003/original/ruiva-ruiva.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/003/medium/ruiva-ruiva.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/003/thumb/ruiva-ruiva.jpg
+Redirected to http://localhost:3000/fotos
+Completed 302 Found in 97ms (ActiveRecord: 76.0ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (17.0ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 34ms (Views: 16.8ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:43 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (0.2ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (7.4ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/fotos/4" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+Processing by FotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CD3u+dn+25D7zmVWAZx/KTTDzZFeYmD3LLkUc4iD4RU=", "id"=>"4"}
+  [1m[36mFoto Load (2.3ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM `fotos` WHERE `fotos`.`id` = 4[0m
+  [1m[35m (2.1ms)[0m  COMMIT
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/004/original/crian_a_ruiva.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/004/medium/crian_a_ruiva.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/004/thumb/crian_a_ruiva.jpg
+Redirected to http://localhost:3000/fotos
+Completed 302 Found in 23ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (1.0ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:46 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (1.8ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (3.4ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/fotos/5" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+Processing by FotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CD3u+dn+25D7zmVWAZx/KTTDzZFeYmD3LLkUc4iD4RU=", "id"=>"5"}
+  [1m[36mFoto Load (0.7ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 5 LIMIT 1[0m
+  [1m[35m (1.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM `fotos` WHERE `fotos`.`id` = 5[0m
+  [1m[35m (1.6ms)[0m  COMMIT
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/005/original/valente.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/005/medium/valente.jpg
+[paperclip] deleting /home/klaus/galeria/public/system/fotos/retratos/000/000/005/thumb/valente.jpg
+Redirected to http://localhost:3000/fotos
+Completed 302 Found in 57ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (5.0ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:47 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (4.1ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (4.9ms)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/slider" for 127.0.0.1 at 2014-08-23 11:56:48 -0700
+Processing by SliderController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `fotos`[0m
+  Rendered slider/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:48 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:48 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:56:49 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (6.5ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (7.3ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 11:56:56 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (49.4ms)
+  Rendered fotos/new.html.erb within layouts/application (72.4ms)
+Completed 200 OK in 94ms (Views: 93.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 11:57:06 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CD3u+dn+25D7zmVWAZx/KTTDzZFeYmD3LLkUc4iD4RU=", "foto"=>{"nome"=>"Luiza", "retrato"=>#<ActionDispatch::Http::UploadedFile:0xb49ca7d4 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-18730-16b7uci>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[retrato]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Concluir"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: convert '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]' -auto-orient -resize "300x300>" '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l20140823-18730-19b6pfn'
+Command :: file -b --mime '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l20140823-18730-19b6pfn'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]'
+Command :: convert '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l.jpg[0]' -auto-orient -resize "x80" -crop "80x80+18+0" +repage '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l20140823-18730-1hzf2rd'
+Command :: file -b --mime '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-18730-mnnc0l20140823-18730-1hzf2rd'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (192.5ms)[0m  INSERT INTO `fotos` (`created_at`, `nome`, `retrato_content_type`, `retrato_file_name`, `retrato_file_size`, `retrato_updated_at`, `updated_at`) VALUES ('2014-08-23 18:57:10', 'Luiza', 'image/jpeg', 'ruiva-ruiva.jpg', 150365, '2014-08-23 18:57:06', '2014-08-23 18:57:10')
+  [1m[36m (589.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos/9
+Completed 302 Found in 4555ms (ActiveRecord: 781.8ms)
+
+
+Started GET "/fotos/9" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mFoto Load (2.2ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 9 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 28ms (Views: 21.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:57:11 -0700
+Processing by FotosController#index as JSON
+  [1m[36mFoto Load (0.6ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.json.jbuilder (11.1ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 11:57:15 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (2.1ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/slider" for 127.0.0.1 at 2014-08-23 11:57:18 -0700
+Processing by SliderController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `fotos`[0m
+  Rendered slider/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+
+
+Started GET "/fotos.json" for 127.0.0.1 at 2014-08-23 11:57:19 -0700
+Processing by FotosController#index as JSON
+  [1m[35mFoto Load (1.5ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.json.jbuilder (4.4ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.5ms)

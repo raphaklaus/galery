@@ -1,0 +1,22 @@
+<h1>Slider de Fotos</h1>
+<hr/>
+
+<% if (!@fotos.empty?) %>
+	<div class="col-md-3">
+		<a id="back" class='leftArrow'/></a>
+	</div>
+
+	<div class="col-md-6">
+		<img width="550" height="400" id="sliderContainer">
+	</div>
+
+	<div class="col-md-2 pull-right">
+		<a id="next" class='rightArrow'></a>
+	</div>
+<% else %>
+	<p> Não há fotos adicionadas na galeria.</p>
+	<%= link_to new_foto_path, :class => 'btn btn-default' do %>
+	  <i class='fa fa-pencil'></i>
+	  Nova Foto
+	<% end %>
+<% end %>
