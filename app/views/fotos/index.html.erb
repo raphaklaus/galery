@@ -1,0 +1,27 @@
+<h1>Listing fotos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fotos.each do |foto| %>
+      <tr>
+        <td><%= image_tag(foto.retrato.url(:thumb)) %></td>
+        <td><%= foto.nome %></td>
+        <td><%= link_to 'Show', foto %></td>
+        <td><%= link_to 'Edit', edit_foto_path(foto) %></td>
+        <td><%= link_to 'Destroy', foto, method: :delete, data: { confirm: 'Tem certeza que deseja deletar a foto?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foto', new_foto_path %>

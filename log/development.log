@@ -1,0 +1,1201 @@
+  [1m[36m (128.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (286.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (24.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFotos (20140823131013)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `fotos` (`id` int(11) auto_increment PRIMARY KEY, `nome` varchar(255), `image_file_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140823131013')
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-23 06:18:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (14.4ms)
+Completed 200 OK in 306ms (Views: 247.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:18:48 -0700
+Processing by FotosController#index as HTML
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `has_file_attached' for #<Class:0xb523a824>):
+  app/models/foto.rb:2:in `<class:Foto>'
+  app/models/foto.rb:1:in `<top (required)>'
+  app/controllers/fotos_controller.rb:7:in `index'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.6ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (69.2ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:19:17 -0700
+Processing by FotosController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  [1m[35mFoto Load (0.4ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1597ms (Views: 1593.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:19:18 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:19:19 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:19:21 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (179.7ms)
+  Rendered fotos/new.html.erb within layouts/application (211.7ms)
+Completed 200 OK in 225ms (Views: 221.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:21:11 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb5fa9b2c @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-18s4x20>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: imagem):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (97.1ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:21:36 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb5dda79c @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-hn331k>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+Completed 500 Internal Server Error in 22ms
+
+Paperclip::Error (Foto model missing required attr_accessor for 'imagem_file_name'):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.4ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+Processing by FotosController#new as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  Rendered fotos/_form.html.erb (42.7ms)
+  Rendered fotos/new.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 144ms (Views: 110.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:22:25 -0700
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:22:32 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb4ff62c0 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-vd794t>, @original_filename="17.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"17.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: imagem):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.9ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.2ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:22:59 -0700
+Processing by FotosController#new as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  Rendered fotos/_form.html.erb (45.6ms)
+  Rendered fotos/new.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 121ms (Views: 62.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:23:00 -0700
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:23:04 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb5fbdab4 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-1dyna7d>, @original_filename="crian_a_ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"crian_a_ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Unpermitted parameters: imagem
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `fotos` (`created_at`, `nome`, `updated_at`) VALUES ('2014-08-23 13:23:04', 'Maria', '2014-08-23 13:23:04')
+  [1m[36m (28.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos/1
+Completed 302 Found in 74ms (ActiveRecord: 65.7ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:23:04 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (160.1ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 175ms
+
+SyntaxError (/home/klaus/galeria/app/views/fotos/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+/home/klaus/galeria/app/views/fotos/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/fotos/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/fotos/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.7ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:23:21 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb52af728>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= image_tag(@foto.imagem.url(:medium)) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__627739678'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.8ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:23:25 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (1.9ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb48044f4>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= image_tag(@foto.imagem.url(:medium)) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__627739678'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.2ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:23:49 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (40.2ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (undefined local variable or method `foto' for #<#<Class:0xb4e121e8>:0xb4d37728>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= image_tag(foto.imagem.url(:medium)) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__630606268'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:24:23 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (2.4ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (undefined local variable or method `foto' for #<#<Class:0xb4e121e8>:0xb4f54efc>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= image_tag(foto.imagem.url(:medium)) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__630606268'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:24:30 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb53b5d0c>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= image_tag(@foto.imagem.url(:medium)) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__627202618'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.1ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:24:58 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (0.2ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb5e073a0>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= @foto.imagem %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__621793508'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.8ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:24:59 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoto Load (1.7ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb6070308>):
+     7: 
+     8: <p>
+     9:   <strong>Imagem:</strong>
+    10:   <%= @foto.imagem %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_foto_path(@foto) %> |
+  app/views/fotos/show.html.erb:10:in `_app_views_fotos_show_html_erb___1018426511__621793508'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.6ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (0.7ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:25 -0700
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:25:45 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:25:46 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (33.4ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (36.6ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0x97d2950>):
+    13:     <% @fotos.each do |foto| %>
+    14:       <tr>
+    15:         <td><%= foto.nome %></td>
+    16:         <td><%= foto.imagem %></td>
+    17:         <td><%= link_to 'Show', foto %></td>
+    18:         <td><%= link_to 'Edit', edit_foto_path(foto) %></td>
+    19:         <td><%= link_to 'Destroy', foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/fotos/index.html.erb:16:in `block in _app_views_fotos_index_html_erb___240273010_79855890'
+  app/views/fotos/index.html.erb:13:in `_app_views_fotos_index_html_erb___240273010_79855890'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.7ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.9ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:25:47 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `imagem' for #<Foto:0xb4814d7c>):
+    13:     <% @fotos.each do |foto| %>
+    14:       <tr>
+    15:         <td><%= foto.nome %></td>
+    16:         <td><%= foto.imagem %></td>
+    17:         <td><%= link_to 'Show', foto %></td>
+    18:         <td><%= link_to 'Edit', edit_foto_path(foto) %></td>
+    19:         <td><%= link_to 'Destroy', foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/fotos/index.html.erb:16:in `block in _app_views_fotos_index_html_erb___240273010__629087928'
+  app/views/fotos/index.html.erb:13:in `_app_views_fotos_index_html_erb___240273010__629087928'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.3ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (2.8ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:00 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:26:02 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (7.9ms)
+  Rendered fotos/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:26:10 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Julia", "image_file_name"=>#<ActionDispatch::Http::UploadedFile:0xb4d81044 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-13k2eje>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[image_file_name]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Completed 500 Internal Server Error in 2ms
+
+Paperclip::Error (Foto model missing required attr_accessor for 'image_file_name_file_name'):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (49.5ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Julia", "image_file_name"=>#<ActionDispatch::Http::UploadedFile:0xb4f0a834 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-1nkcpip>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[image_file_name]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+Unpermitted parameters: image_file_name
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `fotos` (`created_at`, `nome`, `updated_at`) VALUES ('2014-08-23 13:26:44', 'Julia', '2014-08-23 13:26:44')
+  [1m[36m (23.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos/2
+Completed 302 Found in 143ms (ActiveRecord: 96.6ms)
+
+
+Started GET "/fotos/2" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoto Load (2.7ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 2 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 101ms (Views: 75.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:26:44 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:26:45 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:26:48 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (0.6ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:26:52 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (7.4ms)
+  Rendered fotos/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+Processing by FotosController#new as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  Rendered fotos/_form.html.erb (20.3ms)
+  Rendered fotos/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 47ms (Views: 32.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:31 -0700
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Ana", "image_file_name"=>#<ActionDispatch::Http::UploadedFile:0xb5f635c8 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-5377-yp5ysj>, @original_filename="crian_a_ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[image_file_name]\"; filename=\"crian_a_ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Unpermitted parameters: image_file_name
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (10.9ms)[0m  [1mINSERT INTO `fotos` (`created_at`, `nome`, `updated_at`) VALUES ('2014-08-23 13:27:38', 'Ana', '2014-08-23 13:27:38')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/fotos/3
+Completed 302 Found in 40ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/fotos/3" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFoto Load (2.8ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 3 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 19.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:27:39 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:27:44 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (0.4ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:30:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FotosController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  [1m[35mFoto Load (0.3ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 347ms (Views: 194.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:50 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 06:30:51 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (184.8ms)
+  Rendered fotos/new.html.erb within layouts/application (224.4ms)
+Completed 200 OK in 236ms (Views: 231.5ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb44982fc @tempfile=#<Tempfile:/tmp/RackMultipart20140823-6225-sozehw>, @original_filename="17.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"17.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Unpermitted parameters: imagem
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `fotos` (`created_at`, `nome`, `updated_at`) VALUES ('2014-08-23 13:30:58', 'Maria', '2014-08-23 13:30:58')
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos/1
+Completed 302 Found in 12ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/fotos/1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoto Load (0.4ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 06:30:58 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 06:31:03 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (1.1ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/fotos/1" for 127.0.0.1 at 2014-08-23 07:03:30 -0700
+Processing by FotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "id"=>"1"}
+  [1m[35mFoto Load (331.8ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 1 LIMIT 1
+  [1m[36m (17.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (495.1ms)[0m  DELETE FROM `fotos` WHERE `fotos`.`id` = 1
+  [1m[36m (33.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos
+Completed 302 Found in 2815ms (ActiveRecord: 877.4ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:03:36 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (17.9ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 680ms (Views: 660.9ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:03:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:03:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:16:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FotosController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  [1m[35mFoto Load (26.6ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 216ms (Views: 139.2ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:16:16 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 07:16:18 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (40.6ms)
+  Rendered fotos/new.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 113ms (Views: 110.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 07:16:26 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Maria", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb46db578 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-6600-16ffdz9>, @original_filename="17.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"17.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Completed 500 Internal Server Error in 8ms
+
+Paperclip::Error (Foto model missing required attr_accessor for 'imagem_file_name'):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddRetratoToFotos (20140823143245)
+  [1m[35m (1949.2ms)[0m  ALTER TABLE `fotos` ADD `retrato_file_name` varchar(255)
+  [1m[36m (35.8ms)[0m  [1mALTER TABLE `fotos` ADD `retrato_content_type` varchar(255)[0m
+  [1m[35m (25.3ms)[0m  ALTER TABLE `fotos` ADD `retrato_file_size` int(11)
+  [1m[36m (72.1ms)[0m  [1mALTER TABLE `fotos` ADD `retrato_updated_at` datetime[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (95.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140823143245')[0m
+  [1m[35m (2.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:35:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FotosController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  [1m[35mFoto Load (0.4ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 149ms (Views: 101.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:35:41 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 07:35:42 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (92.9ms)
+  Rendered fotos/new.html.erb within layouts/application (113.7ms)
+Completed 200 OK in 136ms (Views: 128.5ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 07:35:49 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Julia", "imagem"=>#<ActionDispatch::Http::UploadedFile:0xb5d7cdf4 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-6900-1n7vc0s>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[imagem]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: imagem):
+  app/controllers/fotos_controller.rb:27:in `create'
+
+
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /home/klaus/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (94.6ms)
+
+
+Started GET "/fotos/" for 127.0.0.1 at 2014-08-23 07:38:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FotosController#index as HTML
+DEPRECATION WARNING: String based terminators are deprecated, please use a lambda. (called from <class:Foto> at /home/klaus/galeria/app/models/foto.rb:2)
+  [1m[35mFoto Load (0.3ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 211ms (Views: 152.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:28 -0700
+
+
+Started GET "/fotos/new" for 127.0.0.1 at 2014-08-23 07:38:30 -0700
+Processing by FotosController#new as HTML
+  Rendered fotos/_form.html.erb (73.4ms)
+  Rendered fotos/new.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 115ms (Views: 105.9ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/fotos" for 127.0.0.1 at 2014-08-23 07:38:38 -0700
+Processing by FotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GF4cJFu4PbJlgawZH21d9+aKcgpZPxWrHWMGBZxJHkQ=", "foto"=>{"nome"=>"Julia", "retrato"=>#<ActionDispatch::Http::UploadedFile:0xb5d79f50 @tempfile=#<Tempfile:/tmp/RackMultipart20140823-7018-1oc49s2>, @original_filename="ruiva-ruiva.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"foto[retrato]\"; filename=\"ruiva-ruiva.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Foto"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: convert '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]' -auto-orient -resize "300x300>" '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr20140823-7018-1ya7a39'
+Command :: file -b --mime '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr20140823-7018-1ya7a39'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: identify -format %m '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]'
+Command :: convert '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr.jpg[0]' -auto-orient -resize "x80" -crop "80x80+18+0" +repage '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr20140823-7018-748qd4'
+Command :: file -b --mime '/tmp/d813ea4306d3d82e7cf99af02a194cb720140823-7018-1prefhr20140823-7018-748qd4'
+  [1m[36m (2.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `fotos` (`created_at`, `nome`, `retrato_content_type`, `retrato_file_name`, `retrato_file_size`, `retrato_updated_at`, `updated_at`) VALUES ('2014-08-23 14:38:40', 'Julia', 'image/jpeg', 'ruiva-ruiva.jpg', 150365, '2014-08-23 14:38:38', '2014-08-23 14:38:40')
+  [1m[36m (26.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/fotos/2
+Completed 302 Found in 2105ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/fotos/2" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoto Load (53.6ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 2 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 67ms (Views: 9.2ms | ActiveRecord: 53.6ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:38:40 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:38:43 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (101.4ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 115ms (Views: 12.8ms | ActiveRecord: 101.4ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (0.8ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 90ms (Views: 87.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:37 -0700
+
+
+Started GET "/fotos/2" for 127.0.0.1 at 2014-08-23 07:39:39 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFoto Load (2.2ms)[0m  [1mSELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 2 LIMIT 1[0m
+  Rendered fotos/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/fotos/2" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+Processing by FotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoto Load (0.4ms)[0m  SELECT  `fotos`.* FROM `fotos`  WHERE `fotos`.`id` = 2 LIMIT 1
+  Rendered fotos/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 66ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:39:50 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:39:52 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (0.2ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (4.4ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:26 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:40:39 -0700
+Processing by FotosController#index as HTML
+  [1m[36mFoto Load (6.2ms)[0m  [1mSELECT `fotos`.* FROM `fotos`[0m
+  Rendered fotos/index.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 92ms (Views: 84.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:40:40 -0700
+
+
+Started GET "/fotos" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+Processing by FotosController#index as HTML
+  [1m[35mFoto Load (0.2ms)[0m  SELECT `fotos`.* FROM `fotos`
+  Rendered fotos/index.html.erb within layouts/application (92.8ms)
+Completed 200 OK in 102ms (Views: 101.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/fotos.css?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/fotos.js?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-23 07:41:11 -0700
