@@ -3,4 +3,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Voltar', fotos_path %>
+<div class="col-md-12">
+	<%= link_to fotos_path, class: 'btn btn-default' do %>
+		<i class='fa fa-arrow-left'></i>
+		Voltar
+	<% end %>
+</div>

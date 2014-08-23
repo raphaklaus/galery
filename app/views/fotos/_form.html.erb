@@ -11,15 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
+  <div class="col-md-12">
+    <%= f.label :nome %>
+  </div>
+
+  <div class="col-md-12 elementDistance">
     <%= f.text_field :nome %>
   </div>
-  <div class="field">
-    <%= f.label :retrato %><br>
+
+  <div class="col-md-12">
+    <%= f.label :retrato %>
+  </div>
+
+  <div class="col-md-12 elementDistance">
     <%= f.file_field :retrato %>
   </div>
-  <div class="actions">
-    <%= f.submit :class => 'btn btn-primary' %>
+  <div class="col-md-12 elementDistance">
+    <%= f.submit :value => 'Concluir', :class => 'btn btn-primary' %>
   </div>
 <% end %>
