@@ -1,14 +1,11 @@
-#sliderContainer{
-	width: 550px;
-	heght: 400px;
-}
-
 .rightArrow{
+	position: absolute;
 	margin-top: 150px;
 	content: url(asset-path('seta_direita.jpg'));
 }
 
 .leftArrow{
+	float: left;
 	margin-top: 150px;
 	content: url(asset-path('seta_esquerda.jpg'));
 }

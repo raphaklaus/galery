@@ -8,26 +8,44 @@ $(function(){
 	}).responseText);	
 	
 	$("#sliderContainer").attr('src', fotos[index].retrato);
+	atualizarIndexMostrador(index);
 
 	$("#next").on('click', function(){
 		index = incrementaIndice(index, fotos.length);
-		$("#sliderContainer").attr('src', fotos[index].retrato);		
 	});
 
 	$("#back").on('click', function(){
 		index = decrementaIndice(index);
-		$("#sliderContainer").attr('src', fotos[index].retrato);		
 	});	
 
 	function incrementaIndice(index, length){
-		if (index < length - 1)
+		if (index < length - 1){
 			index++;
-		return index;
+			fazerTransicao();
+		}
+
+		atualizarIndexMostrador(index);
+		return index;		
 	}
 
 	function decrementaIndice(index){
-		if (index > 0)
+		if (index > 0){
 			index--;
+			fazerTransicao();
+		}
+		atualizarIndexMostrador(index);			
 		return index;
-	}	
+	};	
+
+	function fazerTransicao(){
+		$( "#sliderContainer" ).fadeOut('slow', function(){
+			$("#sliderContainer").attr('src', fotos[index].retrato);
+		});
+
+		$( "#sliderContainer" ).fadeIn();				
+	}
+
+	function atualizarIndexMostrador(index){
+		$("#index").text(index+1);
+	};
 });

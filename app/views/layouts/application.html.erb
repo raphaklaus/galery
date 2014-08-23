@@ -6,14 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-no-turbolink>
 	<nav class="navbar navbar-default navbar-fixed-top">
+	   <ul class="nav navbar-nav">
+	        <li>
+				<%= link_to 'Slider', slider_index_path %>
+	        </li>
+	        <li>
+				<%= link_to 'Galeria de Fotos', fotos_path %>		        
+	        </li>
+		</ul>
 	</nav>
 	<div class="container">
 		<div class="row">
 			<%= yield %>
 		</div>
 	</div>
+
+
 
 
 </body>

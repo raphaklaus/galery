@@ -2,19 +2,18 @@
 <hr/>
 
 <% if (!@fotos.empty?) %>
-	<div class="col-md-3">
+	<div class="col-md-8 col-md-offset-2 elementDistance">
 		<a id="back" class='leftArrow'/></a>
-	</div>
-
-	<div class="col-md-6">
 		<img width="550" height="400" id="sliderContainer">
+		<a id="next" class='rightArrow'></a>
 	</div>
 
-	<div class="col-md-2 pull-right">
-		<a id="next" class='rightArrow'></a>
+	<div class="col-md-12 text-center">
+		<span id='index'></span> de <%= @fotos.length %>
 	</div>
 <% else %>
 	<p> Não há fotos adicionadas na galeria.</p>
+
 	<%= link_to new_foto_path, :class => 'btn btn-default' do %>
 	  <i class='fa fa-pencil'></i>
 	  Nova Foto

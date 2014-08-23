@@ -9,18 +9,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th class="text-center">Imagem</th>
-      <th class="text-center">Nome</th>
-      <th class="text-center">Ações</th>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
   <tbody>
     <% @fotos.each do |foto| %>
       <tr>
-        <td class="text-center"><%= image_tag(foto.retrato.url(:thumb)) %></td>
-        <td  class="text-center"><%= foto.nome %></td>
-        <td class="text-center"><%= link_to (foto), class: 'btn btn-default' do %>
+        <td><%= image_tag(foto.retrato.url(:thumb)) %></td>
+        <td><%= foto.nome %></td>
+        <td><%= link_to (foto), class: 'btn btn-default' do %>
           <i class='fa fa-eye'></i>
           Visualizar
         <% end %>
